@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Invoice Generator</h1>
+      <form id="invoiceForm">
+        <label for="dealerId">Dealer ID</label>
+        <input type="text" id="dealerId" placeholder="e.g. D001" required />
+
+        <label for="vehicleId">Vehicle ID</label>
+        <input type="text" id="vehicleId" placeholder="e.g. V001" required />
+
+        <label for="customerName">Customer Name</label>
+        <input
+          type="text"
+          id="customerName"
+          placeholder="e.g. John Doe"
+          required
+        />
+
+        <button type="submit" id="generateBtn">Generate Invoice</button>
+      </form>
+
+      <p id="statusMessage"></p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
