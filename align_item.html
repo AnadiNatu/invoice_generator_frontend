@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-items Demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        #alignItemsContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap; /* Required for align-items demo */
+            height: 200px;
+            border: 3px solid #222;
+            padding: 10px;
+        }
+
+        .box {
+            width: 70px;
+            height: 70px;
+            border-radius: 6px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <h2 class="mb-3">🎯 align-items — Single Row Vertical Alignment</h2>
+
+    <p>
+        <b>align-items</b> aligns <u>all flex items inside one row</u> along the cross-axis
+        (vertical in this example because direction = row).
+    </p>
+
+    <!-- Controls -->
+    <div class="mb-3">
+        <label class="form-label">align-items:</label>
+        <select id="alignItemsSelect" class="form-select w-25">
+            <option value="stretch">stretch</option>
+            <option value="flex-start">flex-start</option>
+            <option value="center" selected>center</option>
+            <option value="flex-end">flex-end</option>
+            <option value="baseline">baseline</option>
+        </select>
+    </div>
+
+    <!-- Container -->
+    <div id="alignItemsContainer">
+        <div class="box bg-primary">A</div>
+        <div class="box bg-danger">B</div>
+        <div class="box bg-success" style="height: 100px;">C</div>
+        <div class="box bg-warning text-dark">D</div>
+    </div>
+
+    <script>
+        const container = document.getElementById("alignItemsContainer");
+        const select = document.getElementById("alignItemsSelect");
+
+        select.addEventListener("change", () => {
+            container.style.alignItems = select.value;
+        });
+    </script>
+
+</body>
+</html>

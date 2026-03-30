@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-content Demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        #alignContentContainer {
+            display: flex;
+            flex-wrap: wrap; /* Required for align-content */
+            flex-direction: row;
+            height: 250px;
+            border: 3px solid #222;
+            padding: 10px;
+        }
+
+        .item {
+            width: 120px;
+            height: 60px;
+            margin: 4px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <h2 class="mb-3">🎯 align-content — Multi-Row Spacing</h2>
+
+    <p>
+        <b>align-content</b> affects <u>spacing between rows of wrapped items</u>.
+        It does <b>NOT</b> align individual items — that is the job of <b>align-items</b>.
+    </p>
+
+    <!-- Controls -->
+    <div class="mb-3">
+        <label class="form-label">align-content:</label>
+        <select id="alignContentSelect" class="form-select w-25">
+            <option value="stretch">stretch</option>
+            <option value="flex-start">flex-start</option>
+            <option value="center" selected>center</option>
+            <option value="flex-end">flex-end</option>
+            <option value="space-between">space-between</option>
+            <option value="space-around">space-around</option>
+            <option value="space-evenly">space-evenly</option>
+        </select>
+    </div>
+
+    <!-- Container -->
+    <div id="alignContentContainer">
+        <div class="item bg-primary">1</div>
+        <div class="item bg-danger">2</div>
+        <div class="item bg-success">3</div>
+        <div class="item bg-warning text-dark">4</div>
+        <div class="item bg-info text-dark">5</div>
+        <div class="item bg-secondary">6</div>
+        <div class="item bg-dark">7</div>
+    </div>
+
+    <script>
+        const container2 = document.getElementById("alignContentContainer");
+        const select2 = document.getElementById("alignContentSelect");
+
+        select2.addEventListener("change", () => {
+            container2.style.alignContent = select2.value;
+        });
+    </script>
+
+</body>
+</html>
